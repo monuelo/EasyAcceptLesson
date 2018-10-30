@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en" class="no-js">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
+	<link rel="stylesheet" href="css/styles/lightfair.css">
+
+	<script src="js/modernizr.js"></script> <!-- Modernizr -->
+	<script src="js/highlight.pack.js"></script>
+	<title>EasyAccept</title>
+</head>
+
+<body>
+	<header>
+		<h1>EasyAccept</h1>
+	</header>
+	<section class="cd-faq">
+		<ul class="cd-faq-categories">
+			<li><a class="selected" href="#basics">Get Started</a></li>
+			<li><a href="#material">Material</a></li>
+			<li><a href="#doubts">Dúvidas Frequentes</a></li>
+			<li><a href="#links">Links Externos</a></li>
+		</ul> <!-- cd-faq-categories -->
+
+		<div class="cd-faq-items">
+			<ul id="basics" class="cd-faq-group">
+				<li class="cd-faq-title">
+					<h2>Get Started</h2>
+				</li>
+				<li>
+					<a class="cd-faq-trigger" href="#0">O que é o EasyAccept?</a>
+					<div class="cd-faq-content">
+						<p>O EasyAccept é uma ferramenta desenvolvida para ajudar a desenvolver equipes para criar testes de
+							acessibilidade. Tais testes são de caixa preta e visam capturar os requisitos funcionais de um sistema de
+							software, conforme expresso por um cliente.</p>
+					</div> <!-- cd-faq-content -->
+				</li>
+
+				<li>
+					<a class="cd-faq-trigger" href="#0">Onde Posso baixar o EasyAccept?</a>
+					<div class="cd-faq-content">
+						<p>Você pode baixar a última versão do EasyAccept através deste <a href="https://sourceforge.net/projects/easyaccept/files/"
+							 target="_blank">link</a> pelo sourceforge. Ou pode baixar o .JAR diretamente clicando <a href="files/easyaccept.jar"
+							 download>aqui.</a></p>
+					</div> <!-- cd-faq-content -->
+				</li>
+			</ul> <!-- cd-faq-group -->
+
+			<ul id="material" class="cd-faq-group">
+				<li class="cd-faq-title">
+					<h2>Material</h2>
+				</li>
+				<li>
+					<a class="cd-faq-trigger" href="#0">Eu posso ter acesso à apresentação de hoje?</a>
+					<div class="cd-faq-content">
+						<p>Claro! Por que não? É só clicar <a href="https://docs.google.com/presentation/d/1XG_jDJgTLUS00TRMp4utM9_dKo2pqh2Y_84sfNYB2vM/edit?usp=sharing" target="_blank">aqui</a> e você pode revê-la. :)</p>
+					</div> <!-- cd-faq-content -->
+				</li>
+
+				<li>
+					<a class="cd-faq-trigger" href="#0">Onde encontro a documentação ou ajuda?</a>
+					<div class="cd-faq-content">
+						<p>O site do EasyAccept disponibiliza de um curto e simples tutorial para iniciantes. Além disso, também fornece
+							um manual com uma descrição mais detalhada da ferramenta para usuários que querem ir mais fundo. Você pode
+							acessar o site do EasyAccept clicando <a href="http://easyaccept.sourceforge.net/" target="_blank">aqui</a>.</p>
+					</div> <!-- cd-faq-content -->
+				</li>
+
+			</ul> <!-- cd-faq-group -->
+
+			<ul id="doubts" class="cd-faq-group">
+				<li class="cd-faq-title">
+					<h2>Dúvidas Frequentes</h2>
+				</li>
+				<li>
+					<a class="cd-faq-trigger" href="#0">Como eu devo adicionar o EasyAccept ao meu projeto?</a>
+					<div class="cd-faq-content">
+						<p>É bastante simples. Clique com o botão direito no seu projeto, procure por <strong>"Build Path"</strong> e
+							selecione a opção "Configure Build Path...". Em seguida, selecione "Libraries" e aperte em "Add JARs..."
+							ou "Add Externals JARs...". <br>
+							É recomendado que você não adicione JARs externos ao seu projeto, pois isto pode causar uma eventual quebra de
+							dependência, se você acessar em outro local. Para que isto não aconteça, coloque o arquivo JAR do EasyAccept
+							dentro do seu projeto, e o referencie internamente.
+						</p>
+					</div> <!-- cd-faq-content -->
+				</li>
+
+				<li>
+					<a class="cd-faq-trigger" href="#0">Já adicionei a ferramenta ao meu projeto... Mas como a executo?</a>
+					<div class="cd-faq-content">
+						<p>Para executar o EasyAccept você deve fazer o seguinte.</p>
+						<pre><code class="java">
+	public static void main(String[] args) {
+		args = new String[] { "SampleFacade", "acceptance_tests/us1.txt" };
+		EasyAccept.main(args);
+	}								
+							</code></pre>
+						<p>
+							- "Sample Facade" corresponde à sua Facade. (Se estiver usando pacotes, referencie também com pacotes. Exemplo:
+							pacote.Facade) </p>
+						<p>
+							- "acceptance_tests/us1.txt" corresponde ao script de teste, que está localizado na pasta acceptance_tests.
+							(Lembre-se também de referenciar o caminho correto para seus scripts de teste)
+						</p>
+					</div> <!-- cd-faq-content -->
+				</li>
+
+				<li>
+					<a class="cd-faq-trigger" href="#0">"Ei, meu teste dá dando um erro aqui, acho que tá errado..."</a>
+					<div class="cd-faq-content">
+						<p>Ahhh, jura que é o teste? Faz o seguinte. Abre o script de teste e veja a linha que está com problemas... A
+							partir da sintaxe do EasyAccept, mostrada na apresentação, você pode ver o método que está sendo chamado e qual
+							o comportamento esperado. De resto, boa sorte, e bom debugging.</p>
+					</div> <!-- cd-faq-content -->
+				</li>	
+			</ul> <!-- cd-faq-group -->
+
+			<ul id="links" class="cd-faq-group">
+				<li class="cd-faq-title">
+					<h2>Links Externos</h2>
+				</li>
+				<li>
+					<a class="cd-faq-trigger" href="#0">EasyAccept</a>
+					<div class="cd-faq-content">
+						<p>Site do EasyAccept: <a target="_blank" href="http://easyaccept.sourceforge.net/">http://easyaccept.sourceforge.net/</a></p>
+						<p>Página de Download: <a target="_blank" href="https://sourceforge.net/projects/easyaccept/files/">https://sourceforge.net/projects/easyaccept/files/</a></p>
+					</div> <!-- cd-faq-content -->
+				</li>
+
+				<li>
+					<a class="cd-faq-trigger" href="#0">Material</a>
+					<div class="cd-faq-content">
+						<p>Link da apresentação: <a target="_blank" href="https://docs.google.com/presentation/d/1XG_jDJgTLUS00TRMp4utM9_dKo2pqh2Y_84sfNYB2vM/edit?usp=sharing">http://https://docs.google.com/presentation... Ah mt grande, só clica...</a></p>
+						<p>Material desta aula: <a target="_blank" href="https://github.com/hericlesme/EasyAcceptLesson">https://github.com/hericlesme/EasyAcceptLesson</a></p>
+						<p>Download da apresentação: <a target="_blank" href="files/EasyAccept.pptx" download>EasyAccept Presentation</a></p>
+					</div> <!-- cd-faq-content -->
+				</li>
+
+				<li>
+					<a class="cd-faq-trigger" href="#0">Sobre mim</a>
+					<div class="cd-faq-content">
+						<p>Site: <a target="_blank" href="http://hericles.me/">http://hericles.me/</a></p>
+						<p>GitHub: <a target="_blank" href="https://github.com/hericlesme/">https://github.com/hericlesme/</a></p>
+						<p>LinkedIn: <a target="_blank" href="https://linkedin.com/in/hericlesme/">https://linkedin.com/in/hericlesme/</a></p>
+						<p>Instagram: <a target="_blank" href="https://instagram.com/hericlesme/">https://instagram.com/hericlesme/</a></p>
+						
+					</div> <!-- cd-faq-content -->
+				</li>
+			</ul> <!-- cd-faq-group -->
+		</div> <!-- cd-faq-items -->
+		<a href="#0" class="cd-close-panel">Close</a>
+	</section> <!-- cd-faq -->
+	<script src="js/jquery-2.1.1.js"></script>
+	<script src="js/jquery.mobile.custom.min.js"></script>
+	<script>
+		$(document).ready(function () {
+			$('pre code').each(function (i, block) {
+				hljs.highlightBlock(block);
+			});
+		});
+	</script>
+	<script src="js/main.js"></script> <!-- Resource jQuery -->
+</body>
+
+</html>
